@@ -1,0 +1,427 @@
+:root {
+	--error-light: #f87171;
+	--error-main: #ef4444;
+	--error-dark: #dc2626;
+	--error-contrast: #fafafa;
+	--warning-light: #facc15;
+	--warning-main: ##eab308;
+	--warning-dark: #ca8a04;
+	--warning-contrast: #fafafa;
+	--information-light: #38bdf8;
+	--information-main: #0ea5e9;
+	--information-dark: #0284c7;
+	--information-contrast: #fafafa;
+	--success-light: #4ade80;
+	--success-main: #22c55e;
+	--success-dark: #16a34a;
+	--success-contrast: #fafafa;
+	--small: 0 1px 2px 0 #0000000d;
+	--regular: 0 1px 2px -1px #0000001a, 0 1px 3px 0 #0000001a;
+	--medium: 0 2px 4px -2px #0000001a, 0 4px 6px -1px #0000001a;
+	--large: 0 4px 6px -4px #0000001a, 0 10px 15px -3px #0000001a;
+	--extra-large: 0 8px 10px -6px #0000001a, 0 20px 25px -5px #0000001a;
+	--double-extra-large: 0 25px 50px -12px #00000040;
+	--inner: inset 0 2px 4px 0 #0000000d;
+}
+
+body[bright-mode='light'] {
+	--ground-background: #f3f4f6;
+	--ground-paper: #ffffff;
+	--stroke-light: #d1d5db;
+	--stroke-dark: #9ca3af;
+	--text-primary: #111827;
+	--text-secondary: #374151;
+	--text-tertiary: #6b7280;
+	--field-disabled: #f1f5f9;
+}
+
+body[color-mode='red'] {
+	--primary-light: #ef4444;
+	--primary-main: #dc2626;
+	--primary-dark: #b91c1c;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #fecaca;
+	--secondary-main: #fca5a5;
+	--secondary-dark: #f87171;
+	--secondary-contrast-light: #b91c1c;
+	--secondary-contrast-main: #991b1b;
+	--secondary-contrast-dark: #7f1d1d;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}
+
+body[color-mode='orange'] {
+	--primary-light: #f97316;
+	--primary-main: #ea580c;
+	--primary-dark: #c2410c;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #fed7aa;
+	--secondary-main: #fdba74;
+	--secondary-dark: #fb923c;
+	--secondary-contrast-light: #c2410c;
+	--secondary-contrast-main: #991b1b;
+	--secondary-contrast-dark: #7f1d1d;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}
+
+body[color-mode='amber'] {
+	--primary-light: #f59e0b;
+	--primary-main: #d97706;
+	--primary-dark: #b45309;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #fde68a;
+	--secondary-main: #fcd34d;
+	--secondary-dark: #fbbf24;
+	--secondary-contrast-light: #b45309;
+	--secondary-contrast-main: #92400e;
+	--secondary-contrast-dark: #78350f;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}
+
+body[color-mode='yellow'] {
+	--primary-light: #eab308;
+	--primary-main: #ca8a04;
+	--primary-dark: #a16207;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #fef08a;
+	--secondary-main: #fde047;
+	--secondary-dark: #facc15;
+	--secondary-contrast-light: #a16207;
+	--secondary-contrast-main: #854d0e;
+	--secondary-contrast-dark: #713f12;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}
+
+body[color-mode='lime'] {
+	--primary-light: #84cc16;
+	--primary-main: #65a30d;
+	--primary-dark: #4d7c0f;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #d9f99d;
+	--secondary-main: #bef264;
+	--secondary-dark: #a3e635;
+	--secondary-contrast-light: #4d7c0f;
+	--secondary-contrast-main: #3f6212;
+	--secondary-contrast-dark: #365314;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='green'] {
+	--primary-light: #22c55e;
+	--primary-main: #16a34a;
+	--primary-dark: #15803d;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #bbf7d0;
+	--secondary-main: #86efac;
+	--secondary-dark: #4ade80;
+	--secondary-contrast-light: #15803d;
+	--secondary-contrast-main: #166534;
+	--secondary-contrast-dark: #14532d;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='emerald'] {
+	--primary-light: #10b981;
+	--primary-main: #059669;
+	--primary-dark: #047857;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #a7f3d0;
+	--secondary-main: #6ee7b7;
+	--secondary-dark: #34d399;
+	--secondary-contrast-light: #047857;
+	--secondary-contrast-main: #065f46;
+	--secondary-contrast-dark: #064e3b;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='teal'] {
+	--primary-light: #14b8a6;
+	--primary-main: #0d9488;
+	--primary-dark: #0f766e;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #99f6e4;
+	--secondary-main: #5eead4;
+	--secondary-dark: #2dd4bf;
+	--secondary-contrast-light: #0f766e;
+	--secondary-contrast-main: #115e59;
+	--secondary-contrast-dark: #134e4a;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='cyan'] {
+	--primary-light: #06b6d4;
+	--primary-main: #0891b2;
+	--primary-dark: #0e7490;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #a5f3fc;
+	--secondary-main: #67e8f9;
+	--secondary-dark: #22d3ee;
+	--secondary-contrast-light: #0e7490;
+	--secondary-contrast-main: #155e75;
+	--secondary-contrast-dark: #164e63;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='sky'] {
+	--primary-light: #0ea5e9;
+	--primary-main: #0284c7;
+	--primary-dark: #0369a1;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #bae6fd;
+	--secondary-main: #7dd3fc;
+	--secondary-dark: #38bdf8;
+	--secondary-contrast-light: #0369a1;
+	--secondary-contrast-main: #075985;
+	--secondary-contrast-dark: #0c4a6e;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='blue'] {
+	--primary-light: #3b82f6;
+	--primary-main: #2563eb;
+	--primary-dark: #1d4ed8;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #bfdbfe;
+	--secondary-main: #93c5fd;
+	--secondary-dark: #60a5fa;
+	--secondary-contrast-light: #1d4ed8;
+	--secondary-contrast-main: #1e40af;
+	--secondary-contrast-dark: #1e3a8a;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='indigo'] {
+	--primary-light: #6366f1;
+	--primary-main: #4f46e5;
+	--primary-dark: #4338ca;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #c7d2fe;
+	--secondary-main: #a5b4fc;
+	--secondary-dark: #818cf8;
+	--secondary-contrast-light: #4338ca;
+	--secondary-contrast-main: #3730a3;
+	--secondary-contrast-dark: #312e81;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='violet'] {
+	--primary-light: #8b5cf6;
+	--primary-main: #7c3aed;
+	--primary-dark: #6d28d9;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #ddd6fe;
+	--secondary-main: #c4b5fd;
+	--secondary-dark: #a78bfa;
+	--secondary-contrast-light: #6d28d9;
+	--secondary-contrast-main: #5b21b6;
+	--secondary-contrast-dark: #4c1d95;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='purple'] {
+	--primary-light: #a855f7;
+	--primary-main: #9333ea;
+	--primary-dark: #7e22ce;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #e9d5ff;
+	--secondary-main: #d8b4fe;
+	--secondary-dark: #c084fc;
+	--secondary-contrast-light: #7e22ce;
+	--secondary-contrast-main: #6b21a8;
+	--secondary-contrast-dark: #581c87;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #dc2626;
+	--badge-contrast: #f8fafc;
+}
+
+body[color-mode='fuchsia'] {
+	--primary-light: #d946ef;
+	--primary-main: #c026d3;
+	--primary-dark: #a21caf;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #f5d0fe;
+	--secondary-main: #f0abfc;
+	--secondary-dark: #e879f9;
+	--secondary-contrast-light: #a21caf;
+	--secondary-contrast-main: #86198f;
+	--secondary-contrast-dark: #701a75;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}
+
+body[color-mode='pink'] {
+	--primary-light: #ec4899;
+	--primary-main: #db2777;
+	--primary-dark: #be185d;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #fbcfe8;
+	--secondary-main: #f9a8d4;
+	--secondary-dark: #f472b6;
+	--secondary-contrast-light: #be185d;
+	--secondary-contrast-main: #9d174d;
+	--secondary-contrast-dark: #831843;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}
+
+body[color-mode='rose'] {
+	--primary-light: #f43f5e;
+	--primary-main: #e11d48;
+	--primary-dark: #be123c;
+	--primary-contrast-light: #f9fafb;
+	--primary-contrast-main: #f3f4f6;
+	--primary-contrast-dark: #e5e7eb;
+	--secondary-light: #fecdd3;
+	--secondary-main: #fda4af;
+	--secondary-dark: #fb7185;
+	--secondary-contrast-light: #be123c;
+	--secondary-contrast-main: #9f1239;
+	--secondary-contrast-dark: #881337;
+	--tertiary-light: #e5e7eb;
+	--tertiary-main: #d1d5db;
+	--tertiary-dark: #9ca3af;
+	--tertiary-contrast-light: #1f2937;
+	--tertiary-contrast-main: #111827;
+	--tertiary-contrast-dark: #030712;
+	--badge-main: #020617;
+	--badge-contrast: #fafaf9;
+}

@@ -53,5 +53,10 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@types/lodash": "^4.17.0",
+		"clsx": "^2.1.0",
+		"lodash": "^4.17.21"
+	}
 }
