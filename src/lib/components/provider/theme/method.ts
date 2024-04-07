@@ -1,4 +1,4 @@
-import type { BrightMode } from './types.js';
+import type { BrightMode, ColorMode } from './types.js';
 
 export function addBrightModeToBody(newBrightMode: BrightMode) {
 	document.body.setAttribute('bright-mode', newBrightMode);

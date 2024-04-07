@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ButtonGroup from '$lib/components/atom/button/button-group.svelte';
 	import { Button } from '$lib/components/atom/button/index.js';
+	import TextInput from '$lib/components/atom/input/text-input.svelte';
 	import { PuhuiThemeProvider, addColorModeToBody } from '$lib/components/provider/theme/index.js';
 	import _ from 'lodash';
 
@@ -30,6 +31,16 @@
 </script>
 
 <PuhuiThemeProvider>
+	<div class="flex flex-col space-y-[20px] w-[200px]" style="display: flex; width: 200px">
+		<TextInput
+			error
+			helper="Wallet token is a very long string code receive from email"
+			label="Wallet"
+			placeholder="Wallet token"
+			icon="wallet"
+			value="jal10k102y12k1k129u2s82"
+		/>
+	</div>
 	<ButtonGroup>
 		<Button square icon="settings" text="Đăng tin" on:click={randomColorMode} />
 		<Button color="secondary" icon="adjust" text="Click Me" badge="1" on:click={randomColorMode} />

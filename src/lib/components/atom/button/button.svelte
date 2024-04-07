@@ -9,7 +9,7 @@
 	export let square: boolean | undefined = undefined;
 	export let rounded: boolean | undefined = undefined;
 	export let floated: boolean | undefined = undefined;
-	export let tabIndex: number | undefined = undefined;
+	export let tabindex: number | undefined = undefined;
 	export let id: string | undefined = undefined;
 	export let icon: string | undefined = undefined;
 	export let text: string | undefined = undefined;
@@ -27,7 +27,7 @@
 
 	function computeTabIndex() {
 		if (disabled) return -1;
-		if (!_.isNil(tabIndex)) return tabIndex;
+		if (!_.isNil(tabindex)) return tabindex;
 		return undefined;
 	}
 	function computeBadge() {
@@ -79,15 +79,13 @@
 		return '';
 	}
 
-	onMount(() => {
-		shouldFluid = Boolean(fluid && !square);
-		shouldRenderIcon = Boolean(
-			(!_.isEmpty(icon) && !square) || (!_.isEmpty(icon) && !loading && square)
-		);
-		shouldRenderText = Boolean(!_.isEmpty(text) && !square);
-		shouldRenderBadge = Boolean(!_.isEmpty(badge) && !square);
-		shouldRenderComponent = Boolean(!_.isEmpty(icon) || !_.isEmpty(text));
-	});
+	$: shouldFluid = Boolean(fluid && !square);
+	$: shouldRenderIcon = Boolean(
+		(!_.isEmpty(icon) && !square) || (!_.isEmpty(icon) && !loading && square)
+	);
+	$: shouldRenderText = Boolean(!_.isEmpty(text) && !square);
+	$: shouldRenderBadge = Boolean(!_.isEmpty(badge) && !square);
+	$: shouldRenderComponent = Boolean(!_.isEmpty(icon) || !_.isEmpty(text));
 </script>
 
 {#if shouldRenderComponent}
