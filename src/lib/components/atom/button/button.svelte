@@ -15,12 +15,6 @@
 	export let variant: 'contained' | 'outlined' | 'outlined-dashed' = 'contained';
 	export let size: 'small' | 'medium' | 'big' = 'medium';
 
-	let shouldFluid: boolean;
-	let shouldRenderIcon: boolean;
-	let shouldRenderText: boolean;
-	let shouldRenderBadge: boolean;
-	let shouldRenderComponent: boolean;
-
 	function computeTabIndex() {
 		if (disabled) return -1;
 		if (tabindex !== null && tabindex !== undefined) return tabindex;
@@ -36,18 +30,9 @@
 		}
 		return '';
 	}
-
-	$: shouldFluid = !!fluid && !square;
-	$: shouldRenderIcon =
-		(icon !== undefined && icon !== '' && !square) ||
-		(icon !== undefined && icon !== '' && !loading && !!square);
-	$: shouldRenderText = text !== undefined && text !== '' && !square;
-	$: shouldRenderBadge = badge !== undefined && badge !== '' && !square;
-	$: shouldRenderComponent =
-		(icon !== undefined && icon !== '') || (text !== undefined && text !== '');
 </script>
 
-{#if shouldRenderComponent}
+{#if (icon !== undefined && icon !== '') || (text !== undefined && text !== '')}
 	<button
 		title="puhui-button"
 		{disabled}
@@ -55,7 +40,7 @@
 		{type}
 		tabindex={computeTabIndex()}
 		class="puhui-button"
-		class:fluid={shouldFluid}
+		class:fluid={!!fluid && !square}
 		class:floated
 		class:rounded
 		class:outlined={variant === 'outlined'}
@@ -80,13 +65,13 @@
 		on:focus
 		on:blur
 	>
-		{#if shouldRenderIcon}
+		{#if (icon !== undefined && icon !== '' && !square) || (icon !== undefined && icon !== '' && !loading && !!square)}
 			<i class={computeIconClasses()}></i>
 		{/if}
-		{#if shouldRenderText}
+		{#if text !== undefined && text !== '' && !square}
 			<span class="puhui-button-text">{text}</span>
 		{/if}
-		{#if shouldRenderBadge}
+		{#if badge !== undefined && badge !== '' && !square}
 			<span class="puhui-button-badge">{computeBadge()}</span>
 		{/if}
 		{#if loading}
