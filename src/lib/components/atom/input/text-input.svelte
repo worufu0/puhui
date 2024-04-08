@@ -11,8 +11,8 @@
 	export let icon: string | undefined = undefined;
 	export let label: string | undefined = undefined;
 	export let name: string | undefined = undefined;
-	export let placeholder: string | undefined = undefined;
-	export let value: string | undefined = undefined;
+	export let placeholder: string = '';
+	export let value: string = '';
 	export let helper: string | undefined = undefined;
 	export let type: 'text' | 'email' | 'search' | 'url' | 'password' = 'text';
 

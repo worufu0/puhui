@@ -22,14 +22,16 @@
 			'rose'
 		];
 		const randomColorIndex = Math.floor(Math.random() * colors.length);
-		document.body.setAttribute('bright-mode', colors[randomColorIndex]);
+		document.body.setAttribute('color-mode', colors[randomColorIndex]);
 	}
 </script>
 
 <PuhuiThemeProvider>
-	<div class="flex flex-col space-y-[20px] w-[200px]" style="display: flex; width: 200px">
+	<div
+		class="flex flex-col space-y-[20px] w-[200px]"
+		style="display: flex; width: 200px; margin-left: 20px; margin-top: 20px"
+	>
 		<TextInput
-			error
 			helper="Wallet token is a very long string code receive from email"
 			label="Wallet"
 			placeholder="Wallet token"
