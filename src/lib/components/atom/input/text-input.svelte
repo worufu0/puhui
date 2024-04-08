@@ -15,6 +15,7 @@
 	export let value: string = '';
 	export let helper: string | undefined = undefined;
 	export let type: 'text' | 'email' | 'search' | 'url' | 'password' = 'text';
+	export let size: 'small' | 'medium' | 'big' = 'medium';
 
 	let shouldRenderIcon: boolean;
 	let shouldRenderLabel: boolean;
@@ -55,6 +56,9 @@
 			{type}
 			tabindex={computeTabIndex()}
 			class="puhui-text-input-input"
+			class:small={size === 'small'}
+			class:medium={size === 'medium'}
+			class:big={size === 'big'}
 			class:icon={shouldRenderIcon}
 			class:label={shouldRenderLabel}
 			class:error
@@ -91,7 +95,15 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+	}
+	.puhui-text-input-fieldset:has(.puhui-text-input-input.small) {
+		height: 38px;
+	}
+	.puhui-text-input-fieldset:has(.puhui-text-input-input.medium) {
 		height: 42px;
+	}
+	.puhui-text-input-fieldset:has(.puhui-text-input-input.big) {
+		height: 46px;
 	}
 	.puhui-text-input-input {
 		width: 100%;
@@ -181,7 +193,7 @@
 		font-family: Nunito, sans-serif;
 		font-size: 12px;
 		font-weight: 400;
-		line-height: 12px;
+		line-height: 10px;
 		overflow: visible;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -216,15 +228,25 @@
 	}
 	.puhui-text-input-input:placeholder-shown ~ .puhui-text-input-label {
 		font-size: 14px;
-		line-height: 52.5px;
+	}
+	.puhui-text-input-input.small:placeholder-shown ~ .puhui-text-input-label {
+		line-height: 47.75px;
+	}
+	.puhui-text-input-input.medium:placeholder-shown ~ .puhui-text-input-label {
+		line-height: 51.75px;
+	}
+	.puhui-text-input-input.big:placeholder-shown ~ .puhui-text-input-label {
+		line-height: 55.75px;
 	}
 	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label::before,
 	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label::after {
 		border-color: var(--stroke-light);
 	}
-	.puhui-text-input-input:focus ~ .puhui-text-input-label {
+	.puhui-text-input-input.small:focus ~ .puhui-text-input-label,
+	.puhui-text-input-input.medium:focus ~ .puhui-text-input-label,
+	.puhui-text-input-input.big:focus ~ .puhui-text-input-label {
 		font-size: 12px;
-		line-height: 12px;
+		line-height: 10px;
 	}
 	.puhui-text-input-input:focus ~ .puhui-text-input-label {
 		color: var(--primary-main);

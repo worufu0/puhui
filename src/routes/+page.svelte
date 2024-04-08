@@ -27,11 +27,20 @@
 </script>
 
 <PuhuiThemeProvider>
-	<div
-		class="flex flex-col space-y-[20px] w-[200px]"
-		style="display: flex; width: 200px; margin-left: 20px; margin-top: 20px"
-	>
+	<div style="width: 200px; margin-left: 20px; margin-top: 20px">
+		<TextInput
+			size="small"
+			label="Wallet"
+			placeholder="Wallet token"
+			value="jal10k102y12k1k129u2s82"
+		/>
 		<TextInput label="Wallet" placeholder="Wallet token" value="jal10k102y12k1k129u2s82" />
+		<TextInput
+			size="big"
+			label="Wallet"
+			placeholder="Wallet token"
+			value="jal10k102y12k1k129u2s82"
+		/>
 	</div>
 	<ButtonGroup>
 		<Button square icon="settings" text="Đăng tin" on:click={randomColorMode} />
