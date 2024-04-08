@@ -16,6 +16,10 @@
 	export let helper: string | undefined = undefined;
 	export let type: 'text' | 'email' | 'search' | 'url' | 'password' = 'text';
 
+	let shouldRenderIcon: boolean;
+	let shouldRenderLabel: boolean;
+	let shouldRenderHelper: boolean;
+
 	function computeTabIndex() {
 		if (disabled) return -1;
 		if (tabindex !== null && tabindex !== undefined) return tabindex;
@@ -28,6 +32,10 @@
 		}
 		return '';
 	}
+
+	$: shouldRenderIcon = icon !== undefined && icon !== '';
+	$: shouldRenderLabel = label !== undefined && label !== '';
+	$: shouldRenderHelper = helper !== undefined && helper !== '';
 </script>
 
 <div class="puhui-text-input-wrapper">
@@ -47,8 +55,8 @@
 			{type}
 			tabindex={computeTabIndex()}
 			class="puhui-text-input-input"
-			class:icon={icon !== undefined && icon !== ''}
-			class:label={label !== undefined && label !== ''}
+			class:icon={shouldRenderIcon}
+			class:label={shouldRenderLabel}
 			class:error
 			on:input
 			on:keydown
@@ -58,14 +66,14 @@
 			on:focus
 			on:blur
 		/>
-		{#if label !== undefined && label !== ''}
+		{#if shouldRenderLabel}
 			<label for={id} class="puhui-text-input-label" class:error>{label}</label>
 		{/if}
-		{#if icon !== undefined && icon !== ''}
+		{#if shouldRenderIcon}
 			<i class={computeIconClasses()}></i>
 		{/if}
 	</div>
-	{#if helper !== undefined && helper !== ''}
+	{#if shouldRenderHelper}
 		<span class="puhui-text-input-helper" class:error> {helper} </span>
 	{/if}
 </div>
