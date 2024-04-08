@@ -1,7 +1,5 @@
 <script lang="ts">
 	import _ from 'lodash';
-	import clsx from 'clsx';
-	import { onMount } from 'svelte';
 
 	export let disabled: boolean | undefined = undefined;
 	export let readonly: boolean | undefined = undefined;
@@ -29,32 +27,12 @@
 		if (!_.isNil(tabindex)) return tabindex;
 		return undefined;
 	}
-	function computeInputClasses() {
-		const baseClass = 'puhui-text-input-input';
-		return clsx(baseClass, {
-			icon: shouldRenderIcon,
-			label: shouldRenderLabel,
-			error: error
-		});
-	}
-	function computeLabelClasses() {
-		const baseClass = 'puhui-text-input-label';
-		return clsx(baseClass, {
-			error: error
-		});
-	}
 	function computeIconClasses() {
 		if (shouldRenderIcon) {
 			const firstClass = _.split(icon, ' ')[0];
 			if (!_.isEmpty(firstClass)) return `puhui-text-input-icon icofont-${firstClass}`;
 		}
 		return '';
-	}
-	function computeHelperClasses() {
-		const baseClass = 'puhui-text-input-helper';
-		return clsx(baseClass, {
-			error: error
-		});
 	}
 
 	$: shouldRenderIcon = !_.isEmpty(icon);
@@ -78,7 +56,10 @@
 			{value}
 			{type}
 			tabindex={computeTabIndex()}
-			class={computeInputClasses()}
+			class="puhui-text-input-input"
+			class:icon={shouldRenderIcon}
+			class:label={shouldRenderLabel}
+			class:error
 			on:input
 			on:keydown
 			on:keypress
@@ -88,14 +69,14 @@
 			on:blur
 		/>
 		{#if shouldRenderLabel}
-			<label for={id} class={computeLabelClasses()}>{label}</label>
+			<label for={id} class="puhui-text-input-label" class:error>{label}</label>
 		{/if}
 		{#if shouldRenderIcon}
 			<i class={computeIconClasses()}></i>
 		{/if}
 	</div>
 	{#if shouldRenderHelper}
-		<span class={computeHelperClasses()}> {helper} </span>
+		<span class="puhui-text-input-helper" class:error> {helper} </span>
 	{/if}
 </div>
 

@@ -1,12 +1,10 @@
 <script lang="ts">
-	import ButtonGroup from '$lib/components/atom/button/button-group.svelte';
-	import { Button } from '$lib/components/atom/button/index.js';
-	import TextInput from '$lib/components/atom/input/text-input.svelte';
-	import { PuhuiThemeProvider, addColorModeToBody } from '$lib/components/provider/theme/index.js';
 	import _ from 'lodash';
+	import { Button, ButtonGroup, PuhuiThemeProvider, TextInput } from '$lib/components/index.js';
 
 	function randomColorMode() {
-		addColorModeToBody(
+		document.body.setAttribute(
+			'bright-mode',
 			_.sample([
 				'red',
 				'orange',

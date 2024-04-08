@@ -1,20 +1,16 @@
 <script lang="ts">
 	import _ from 'lodash';
-	import clsx from 'clsx';
 
 	export let id: string | undefined = undefined;
 	export let direction: 'horizontal' | 'vertical' = 'horizontal';
-
-	function computeClasses() {
-		const baseClass = 'puhui-button-group';
-		return clsx(baseClass, {
-			horizontal: _.isEqual(direction, 'horizontal'),
-			vertical: _.isEqual(direction, 'vertical')
-		});
-	}
 </script>
 
-<div {id} class={computeClasses()}>
+<div
+	{id}
+	class="puhui-button-group"
+	class:horizontal={_.isEqual(direction, 'horizontal')}
+	class:vertical={_.isEqual(direction, 'vertical')}
+>
 	<slot />
 </div>
 

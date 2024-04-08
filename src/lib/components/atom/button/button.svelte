@@ -1,7 +1,5 @@
 <script lang="ts">
 	import _ from 'lodash';
-	import clsx from 'clsx';
-	import { onMount } from 'svelte';
 
 	export let disabled: boolean | undefined = undefined;
 	export let loading: boolean | undefined = undefined;
@@ -33,44 +31,6 @@
 	function computeBadge() {
 		return _.split(badge, ' ')[0];
 	}
-	function computeButtonClasses() {
-		const baseClass = 'puhui-button';
-		return clsx(baseClass, {
-			fluid: shouldFluid,
-			floated: floated,
-			rounded: rounded,
-			outlined: _.isEqual(variant, 'outlined'),
-			'outlined-dashed': _.isEqual(variant, 'outlined-dashed'),
-			dashed: _.isEqual(variant, 'outlined-dashed'),
-			'primary-contained': Boolean(_.isEqual(color, 'primary') && _.isEqual(variant, 'contained')),
-			'primary-outlined': Boolean(_.isEqual(color, 'primary') && _.isEqual(variant, 'outlined')),
-			'primary-outlined-dashed': Boolean(
-				_.isEqual(color, 'primary') && _.isEqual(variant, 'outlined-dashed')
-			),
-			'secondary-contained': Boolean(
-				_.isEqual(color, 'secondary') && _.isEqual(variant, 'contained')
-			),
-			'secondary-outlined': Boolean(
-				_.isEqual(color, 'secondary') && _.isEqual(variant, 'outlined')
-			),
-			'secondary-outlined-dashed': Boolean(
-				_.isEqual(color, 'secondary') && _.isEqual(variant, 'outlined-dashed')
-			),
-			'tertiary-contained': Boolean(
-				_.isEqual(color, 'tertiary') && _.isEqual(variant, 'contained')
-			),
-			'tertiary-outlined': Boolean(_.isEqual(color, 'tertiary') && _.isEqual(variant, 'outlined')),
-			'tertiary-outlined-dashed': Boolean(
-				_.isEqual(color, 'tertiary') && _.isEqual(variant, 'outlined-dashed')
-			),
-			small: Boolean(!square && _.isEqual(size, 'small')),
-			'square-small': Boolean(square && _.isEqual(size, 'small')),
-			medium: Boolean(!square && _.isEqual(size, 'medium')),
-			'square-medium': Boolean(square && _.isEqual(size, 'medium')),
-			big: Boolean(!square && _.isEqual(size, 'big')),
-			'square-big': Boolean(square && _.isEqual(size, 'big'))
-		});
-	}
 	function computeIconClasses() {
 		if (shouldRenderIcon) {
 			const firstClass = _.split(icon, ' ')[0];
@@ -95,7 +55,44 @@
 		{id}
 		{type}
 		tabindex={computeTabIndex()}
-		class={computeButtonClasses()}
+		class="puhui-button"
+		class:fluid={shouldFluid}
+		class:floated
+		class:rounded
+		class:outlined={_.isEqual(variant, 'outlined')}
+		class:outlined-dashed={_.isEqual(variant, 'outlined-dashed')}
+		class:dashed={_.isEqual(variant, 'outlined-dashed')}
+		class:primary-contained={Boolean(
+			_.isEqual(color, 'primary') && _.isEqual(variant, 'contained')
+		)}
+		class:primary-outlined={Boolean(_.isEqual(color, 'primary') && _.isEqual(variant, 'outlined'))}
+		class:primary-outlined-dashed={Boolean(
+			_.isEqual(color, 'primary') && _.isEqual(variant, 'outlined-dashed')
+		)}
+		class:secondary-contained={Boolean(
+			_.isEqual(color, 'secondary') && _.isEqual(variant, 'contained')
+		)}
+		class:secondary-outlined={Boolean(
+			_.isEqual(color, 'secondary') && _.isEqual(variant, 'outlined')
+		)}
+		class:secondary-outlined-dashed={Boolean(
+			_.isEqual(color, 'secondary') && _.isEqual(variant, 'outlined-dashed')
+		)}
+		class:tertiary-contained={Boolean(
+			_.isEqual(color, 'tertiary') && _.isEqual(variant, 'contained')
+		)}
+		class:tertiary-outlined={Boolean(
+			_.isEqual(color, 'tertiary') && _.isEqual(variant, 'outlined')
+		)}
+		class:tertiary-outlined-dashed={Boolean(
+			_.isEqual(color, 'tertiary') && _.isEqual(variant, 'outlined-dashed')
+		)}
+		class:small={Boolean(!square && _.isEqual(size, 'small'))}
+		class:square-small={Boolean(square && _.isEqual(size, 'small'))}
+		class:medium={Boolean(!square && _.isEqual(size, 'medium'))}
+		class:square-medium={Boolean(square && _.isEqual(size, 'medium'))}
+		class:big={Boolean(!square && _.isEqual(size, 'big'))}
+		class:square-big={Boolean(square && _.isEqual(size, 'big'))}
 		on:click
 		on:focus
 		on:blur
