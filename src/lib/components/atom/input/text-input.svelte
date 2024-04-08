@@ -1,6 +1,4 @@
 <script lang="ts">
-	import _ from 'lodash';
-
 	export let disabled: boolean | undefined = undefined;
 	export let readonly: boolean | undefined = undefined;
 	export let required: boolean | undefined = undefined;
@@ -24,20 +22,20 @@
 
 	function computeTabIndex() {
 		if (disabled) return -1;
-		if (!_.isNil(tabindex)) return tabindex;
+		if (tabindex !== null && tabindex !== undefined) return tabindex;
 		return undefined;
 	}
 	function computeIconClasses() {
-		if (shouldRenderIcon) {
-			const firstClass = _.split(icon, ' ')[0];
-			if (!_.isEmpty(firstClass)) return `puhui-text-input-icon icofont-${firstClass}`;
+		if (icon !== undefined && icon !== '') {
+			const firstClass = icon.split(' ')[0];
+			if (firstClass !== '') return `puhui-text-input-icon icofont-${firstClass}`;
 		}
 		return '';
 	}
 
-	$: shouldRenderIcon = !_.isEmpty(icon);
-	$: shouldRenderLabel = !_.isEmpty(label);
-	$: shouldRenderHelper = !_.isEmpty(helper);
+	$: shouldRenderIcon = icon !== undefined && icon !== '';
+	$: shouldRenderLabel = label !== undefined && label !== '';
+	$: shouldRenderHelper = helper !== undefined && helper !== '';
 </script>
 
 <div class="puhui-text-input-wrapper">

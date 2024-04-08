@@ -1,30 +1,28 @@
 <script lang="ts">
-	import _ from 'lodash';
-	import { Button, ButtonGroup, PuhuiThemeProvider, TextInput } from '$lib/components/index.js';
+	import { Button, ButtonGroup, PuhuiThemeProvider, TextInput } from '$lib/index.js';
 
 	function randomColorMode() {
-		document.body.setAttribute(
-			'bright-mode',
-			_.sample([
-				'red',
-				'orange',
-				'amber',
-				'yellow',
-				'lime',
-				'green',
-				'emerald',
-				'teal',
-				'cyan',
-				'sky',
-				'blue',
-				'indigo',
-				'violet',
-				'purple',
-				'fuchsia',
-				'pink',
-				'rose'
-			])
-		);
+		const colors = [
+			'red',
+			'orange',
+			'amber',
+			'yellow',
+			'lime',
+			'green',
+			'emerald',
+			'teal',
+			'cyan',
+			'sky',
+			'blue',
+			'indigo',
+			'violet',
+			'purple',
+			'fuchsia',
+			'pink',
+			'rose'
+		];
+		const randomColorIndex = Math.floor(Math.random() * colors.length);
+		document.body.setAttribute('bright-mode', colors[randomColorIndex]);
 	}
 </script>
 

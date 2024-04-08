@@ -1,6 +1,4 @@
 <script lang="ts">
-	import _ from 'lodash';
-
 	export let disabled: boolean | undefined = undefined;
 	export let loading: boolean | undefined = undefined;
 	export let fluid: boolean | undefined = undefined;
@@ -25,27 +23,28 @@
 
 	function computeTabIndex() {
 		if (disabled) return -1;
-		if (!_.isNil(tabindex)) return tabindex;
+		if (tabindex !== null && tabindex !== undefined) return tabindex;
 		return undefined;
 	}
 	function computeBadge() {
-		return _.split(badge, ' ')[0];
+		return badge !== undefined && badge !== '' ? badge.split(' ')[0] : '';
 	}
 	function computeIconClasses() {
-		if (shouldRenderIcon) {
-			const firstClass = _.split(icon, ' ')[0];
-			if (!_.isEmpty(firstClass)) return `puhui-button-icon icofont-${firstClass}`;
+		if (icon !== undefined && icon !== '') {
+			const firstClass = icon.split(' ')[0];
+			if (firstClass !== '') return `puhui-button-icon icofont-${firstClass}`;
 		}
 		return '';
 	}
 
-	$: shouldFluid = Boolean(fluid && !square);
-	$: shouldRenderIcon = Boolean(
-		(!_.isEmpty(icon) && !square) || (!_.isEmpty(icon) && !loading && square)
-	);
-	$: shouldRenderText = Boolean(!_.isEmpty(text) && !square);
-	$: shouldRenderBadge = Boolean(!_.isEmpty(badge) && !square);
-	$: shouldRenderComponent = Boolean(!_.isEmpty(icon) || !_.isEmpty(text));
+	$: shouldFluid = !!fluid && !square;
+	$: shouldRenderIcon =
+		(icon !== undefined && icon !== '' && !square) ||
+		(icon !== undefined && icon !== '' && !loading && !!square);
+	$: shouldRenderText = text !== undefined && text !== '' && !square;
+	$: shouldRenderBadge = badge !== undefined && badge !== '' && !square;
+	$: shouldRenderComponent =
+		(icon !== undefined && icon !== '') || (text !== undefined && text !== '');
 </script>
 
 {#if shouldRenderComponent}
@@ -59,40 +58,24 @@
 		class:fluid={shouldFluid}
 		class:floated
 		class:rounded
-		class:outlined={_.isEqual(variant, 'outlined')}
-		class:outlined-dashed={_.isEqual(variant, 'outlined-dashed')}
-		class:dashed={_.isEqual(variant, 'outlined-dashed')}
-		class:primary-contained={Boolean(
-			_.isEqual(color, 'primary') && _.isEqual(variant, 'contained')
-		)}
-		class:primary-outlined={Boolean(_.isEqual(color, 'primary') && _.isEqual(variant, 'outlined'))}
-		class:primary-outlined-dashed={Boolean(
-			_.isEqual(color, 'primary') && _.isEqual(variant, 'outlined-dashed')
-		)}
-		class:secondary-contained={Boolean(
-			_.isEqual(color, 'secondary') && _.isEqual(variant, 'contained')
-		)}
-		class:secondary-outlined={Boolean(
-			_.isEqual(color, 'secondary') && _.isEqual(variant, 'outlined')
-		)}
-		class:secondary-outlined-dashed={Boolean(
-			_.isEqual(color, 'secondary') && _.isEqual(variant, 'outlined-dashed')
-		)}
-		class:tertiary-contained={Boolean(
-			_.isEqual(color, 'tertiary') && _.isEqual(variant, 'contained')
-		)}
-		class:tertiary-outlined={Boolean(
-			_.isEqual(color, 'tertiary') && _.isEqual(variant, 'outlined')
-		)}
-		class:tertiary-outlined-dashed={Boolean(
-			_.isEqual(color, 'tertiary') && _.isEqual(variant, 'outlined-dashed')
-		)}
-		class:small={Boolean(!square && _.isEqual(size, 'small'))}
-		class:square-small={Boolean(square && _.isEqual(size, 'small'))}
-		class:medium={Boolean(!square && _.isEqual(size, 'medium'))}
-		class:square-medium={Boolean(square && _.isEqual(size, 'medium'))}
-		class:big={Boolean(!square && _.isEqual(size, 'big'))}
-		class:square-big={Boolean(square && _.isEqual(size, 'big'))}
+		class:outlined={variant === 'outlined'}
+		class:outlined-dashed={variant === 'outlined-dashed'}
+		class:dashed={variant === 'outlined-dashed'}
+		class:primary-contained={color === 'primary' && variant === 'contained'}
+		class:primary-outlined={color === 'primary' && variant === 'outlined'}
+		class:primary-outlined-dashed={color === 'primary' && variant === 'outlined-dashed'}
+		class:secondary-contained={color === 'secondary' && variant === 'contained'}
+		class:secondary-outlined={color === 'secondary' && variant === 'outlined'}
+		class:secondary-outlined-dashed={color === 'secondary' && variant === 'outlined-dashed'}
+		class:tertiary-contained={color === 'tertiary' && variant === 'contained'}
+		class:tertiary-outlined={color === 'tertiary' && variant === 'outlined'}
+		class:tertiary-outlined-dashed={color === 'tertiary' && variant === 'outlined-dashed'}
+		class:small={!square && size === 'small'}
+		class:square-small={!!square && size === 'small'}
+		class:medium={!square && size === 'medium'}
+		class:square-medium={!!square && size === 'medium'}
+		class:big={!square && size === 'big'}
+		class:square-big={!!square && size === 'big'}
 		on:click
 		on:focus
 		on:blur

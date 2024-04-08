@@ -1,6 +1,4 @@
 <script lang="ts">
-	import _ from 'lodash';
-
 	export let id: string | undefined = undefined;
 	export let direction: 'horizontal' | 'vertical' = 'horizontal';
 </script>
@@ -8,8 +6,8 @@
 <div
 	{id}
 	class="puhui-button-group"
-	class:horizontal={_.isEqual(direction, 'horizontal')}
-	class:vertical={_.isEqual(direction, 'vertical')}
+	class:horizontal={direction === 'horizontal'}
+	class:vertical={direction === 'vertical'}
 >
 	<slot />
 </div>
