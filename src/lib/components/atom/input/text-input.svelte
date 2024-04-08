@@ -101,7 +101,6 @@
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 20px;
-		color: var(--text-primary);
 		outline: 2px solid transparent;
 		outline-offset: 2px;
 		border-width: 1px;
@@ -112,10 +111,19 @@
 		transition-property: all;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 200ms;
+		padding-right: 10px;
+		border-color: var(--stroke-light);
+		color: var(--text-primary);
 	}
 	.puhui-text-input-input:disabled {
 		background-color: var(--field-disabled);
 		cursor: not-allowed;
+	}
+	.puhui-text-input-input:placeholder-shown {
+		border-top-color: var(--stroke-light);
+	}
+	.puhui-text-input-input:focus {
+		border-color: var(--primary-main);
 	}
 	.puhui-text-input-input:focus::placeholder {
 		opacity: 100%;
@@ -127,36 +135,23 @@
 		appearance: none;
 	}
 	.puhui-text-input-input::placeholder {
+		color: var(--text-tertiary);
 		opacity: 0%;
 	}
 	.puhui-text-input-input::selection {
 		background-color: var(--tertiary-main);
 	}
-	.puhui-text-input-input:not(.icon) {
-		padding-right: 10px;
-	}
 	.puhui-text-input-input.icon {
 		padding-right: 36px;
 	}
-	.puhui-text-input-input.label,
-	.puhui-text-input-input.label:focus {
+	.puhui-text-input-input.label {
 		border-top-color: transparent;
 	}
-	.puhui-text-input-input:not(.error) {
-		border-color: var(--stroke-light);
-	}
-	.puhui-text-input-input:not(.error):not(:placeholder-shown) {
-		border-top-color: transparent;
-	}
-	.puhui-text-input-input:not(.error):placeholder-shown {
+	.puhui-text-input-input.label:placeholder-shown {
 		border-top-color: var(--stroke-light);
 	}
-	.puhui-text-input-input:not(.error):focus {
-		border-top-color: transparent !important;
-		border-color: var(--primary-main);
-	}
-	.puhui-text-input-input:not(.error)::placeholder {
-		color: var(--text-tertiary);
+	.puhui-text-input-input.label:focus {
+		border-top-color: transparent;
 	}
 	.puhui-text-input-input.error {
 		border-color: var(--error-main);
@@ -167,12 +162,11 @@
 	.puhui-text-input-input.error:placeholder-shown {
 		border-top-color: var(--error-main);
 	}
-	.puhui-text-input-input.error:focus {
-		border-top-color: transparent !important;
-		border-color: var(--error-dark);
-	}
 	.puhui-text-input-input.error::placeholder {
 		color: var(--error-main);
+	}
+	.puhui-text-input-input.error:focus {
+		border-top-color: transparent;
 	}
 	.puhui-text-input-label {
 		position: absolute;
@@ -188,12 +182,13 @@
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 12px;
-		overflow: visible !important;
+		overflow: visible;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		transition-property: all;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 200ms;
+		color: var(--text-tertiary);
 	}
 	.puhui-text-input-label::before,
 	.puhui-text-input-label::after {
@@ -205,6 +200,7 @@
 		transition-property: all;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 200ms;
+		border-color: var(--stroke-light);
 	}
 	.puhui-text-input-label::before {
 		width: 10px;
@@ -222,25 +218,19 @@
 		font-size: 14px;
 		line-height: 52.5px;
 	}
+	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label::before,
+	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label::after {
+		border-color: var(--stroke-light);
+	}
 	.puhui-text-input-input:focus ~ .puhui-text-input-label {
 		font-size: 12px;
 		line-height: 12px;
 	}
-	.puhui-text-input-label:not(.error) {
-		color: var(--text-tertiary);
-	}
-	.puhui-text-input-input:focus ~ .puhui-text-input-label:not(.error) {
+	.puhui-text-input-input:focus ~ .puhui-text-input-label {
 		color: var(--primary-main);
 	}
-	.puhui-text-input-label:not(.error)::before,
-	.puhui-text-input-label:not(.error)::after,
-	.puhui-text-input-input:disabled ~ .puhui-text-input-label:not(.error)::before,
-	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label:not(.error)::before,
-	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label:not(.error)::after {
-		border-color: var(--stroke-light);
-	}
-	.puhui-text-input-input:focus ~ .puhui-text-input-label:not(.error)::before,
-	.puhui-text-input-input:focus ~ .puhui-text-input-label:not(.error)::after {
+	.puhui-text-input-input:focus ~ .puhui-text-input-label::before,
+	.puhui-text-input-input:focus ~ .puhui-text-input-label::after {
 		border-color: var(--primary-main);
 	}
 	.puhui-text-input-label.error {
@@ -251,7 +241,6 @@
 	}
 	.puhui-text-input-label.error::before,
 	.puhui-text-input-label.error::after,
-	.puhui-text-input-input:disabled ~ .puhui-text-input-label.error::before,
 	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label.error::before,
 	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label.error::after {
 		border-color: var(--error-main);
@@ -277,8 +266,6 @@
 		line-height: 14px;
 		margin-left: 10px;
 		margin-right: 10px;
-	}
-	.puhui-text-input-helper:not(.error) {
 		color: var(--text-tertiary);
 	}
 	.puhui-text-input-helper.error {

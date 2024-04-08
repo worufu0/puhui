@@ -31,13 +31,7 @@
 		class="flex flex-col space-y-[20px] w-[200px]"
 		style="display: flex; width: 200px; margin-left: 20px; margin-top: 20px"
 	>
-		<TextInput
-			helper="Wallet token is a very long string code receive from email"
-			label="Wallet"
-			placeholder="Wallet token"
-			icon="wallet"
-			value="jal10k102y12k1k129u2s82"
-		/>
+		<TextInput label="Wallet" placeholder="Wallet token" value="jal10k102y12k1k129u2s82" />
 	</div>
 	<ButtonGroup>
 		<Button square icon="settings" text="Đăng tin" on:click={randomColorMode} />

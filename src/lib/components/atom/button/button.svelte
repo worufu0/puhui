@@ -110,6 +110,7 @@
 		user-select: none;
 		font-family: Nunito, sans-serif;
 		appearance: none;
+		border-radius: 4px;
 	}
 	.puhui-button:disabled {
 		opacity: 50%;
@@ -127,12 +128,6 @@
 	.puhui-button.fluid {
 		width: 100%;
 	}
-	.puhui-button:not(.floated):hover:enabled {
-		box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--small);
-	}
-	.puhui-button:not(.floated):active:enabled {
-		box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--inner);
-	}
 	.puhui-button.floated:enabled {
 		box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--medium);
 	}
@@ -141,9 +136,6 @@
 	}
 	.puhui-button.floated:active:enabled {
 		box-shadow: var(--ring-offset-shadow, 0 0 #0000), var(--ring-shadow, 0 0 #0000), var(--small);
-	}
-	.puhui-button:not(.rounded) {
-		border-radius: 4px;
 	}
 	.puhui-button.rounded {
 		border-radius: 9999px;
