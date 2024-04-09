@@ -1,1 +1,1 @@
-export type { BrightMode, ColorMode } from './components/provider/theme/types.js';
+export type { PuhuiBrightness, PuhuiColor } from './components/providers/theme/types';

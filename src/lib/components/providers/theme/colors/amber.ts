@@ -1,0 +1,22 @@
+export const amber: { [key: string]: string } = {
+	'--primary-light': '#f59e0b',
+	'--primary-main': '#d97706',
+	'--primary-dark': '#b45309',
+	'--primary-contrast-light': '#f9fafb',
+	'--primary-contrast-main': '#f3f4f6',
+	'--primary-contrast-dark': '#e5e7eb',
+	'--secondary-light': '#fde68a',
+	'--secondary-main': '#fcd34d',
+	'--secondary-dark': '#fbbf24',
+	'--secondary-contrast-light': '#b45309',
+	'--secondary-contrast-main': '#92400e',
+	'--secondary-contrast-dark': '#78350f',
+	'--tertiary-light': '#e5e7eb',
+	'--tertiary-main': '#d1d5db',
+	'--tertiary-dark': '#9ca3af',
+	'--tertiary-contrast-light': '#1f2937',
+	'--tertiary-contrast-main': '#111827',
+	'--tertiary-contrast-dark': '#030712',
+	'--badge-main': '#020617',
+	'--badge-contrast': '#fafaf9'
+};

@@ -1,5 +1,5 @@
-export type BrightMode = 'light' | 'dark';
-export type ColorMode =
+export type PuhuiBrightness = 'light' | 'dark';
+export type PuhuiColor =
 	| 'red'
 	| 'orange'
 	| 'amber'

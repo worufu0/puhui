@@ -1,0 +1,22 @@
+export const fuchsia: { [key: string]: string } = {
+	'--primary-light': '#d946ef',
+	'--primary-main': '#c026d3',
+	'--primary-dark': '#a21caf',
+	'--primary-contrast-light': '#f9fafb',
+	'--primary-contrast-main': '#f3f4f6',
+	'--primary-contrast-dark': '#e5e7eb',
+	'--secondary-light': '#f5d0fe',
+	'--secondary-main': '#f0abfc',
+	'--secondary-dark': '#e879f9',
+	'--secondary-contrast-light': '#a21caf',
+	'--secondary-contrast-main': '#86198f',
+	'--secondary-contrast-dark': '#701a75',
+	'--tertiary-light': '#e5e7eb',
+	'--tertiary-main': '#d1d5db',
+	'--tertiary-dark': '#9ca3af',
+	'--tertiary-contrast-light': '#1f2937',
+	'--tertiary-contrast-main': '#111827',
+	'--tertiary-contrast-dark': '#030712',
+	'--badge-main': '#020617',
+	'--badge-contrast': '#fafaf9'
+};

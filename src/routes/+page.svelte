@@ -1,8 +1,12 @@
 <script lang="ts">
-	import { Button, ButtonGroup, PuhuiThemeProvider, TextInput } from '$lib/index.js';
+	import { Button, ButtonGroup, PuhuiThemeProvider, TextInput } from '$lib';
+	import type { PuhuiBrightness, PuhuiColor } from '$lib/types';
+
+	let brightness: PuhuiBrightness;
+	let color: PuhuiColor;
 
 	function randomColorMode() {
-		const colors = [
+		const colors: PuhuiColor[] = [
 			'red',
 			'orange',
 			'amber',
@@ -22,11 +26,11 @@
 			'rose'
 		];
 		const randomColorIndex = Math.floor(Math.random() * colors.length);
-		document.body.setAttribute('color-mode', colors[randomColorIndex]);
+		color = colors[randomColorIndex];
 	}
 </script>
 
-<PuhuiThemeProvider>
+<PuhuiThemeProvider {brightness} {color}>
 	<div style="width: 200px; margin-left: 20px; margin-top: 20px">
 		<TextInput
 			size="small"

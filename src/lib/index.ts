@@ -1,4 +1,4 @@
-export { default as Button } from './components/atom/button/button.svelte';
-export { default as ButtonGroup } from './components/atom/button/button-group.svelte';
-export { default as TextInput } from './components/atom/input/text-input.svelte';
-export { default as PuhuiThemeProvider } from './components/provider/theme/theme.svelte';
+export { default as Button } from './components/atoms/button/button.svelte';
+export { default as ButtonGroup } from './components/atoms/button/button-group.svelte';
+export { default as TextInput } from './components/atoms/input/text-input.svelte';
+export { default as PuhuiThemeProvider } from './components/providers/theme/theme.svelte';

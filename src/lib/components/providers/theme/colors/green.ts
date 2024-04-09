@@ -1,0 +1,22 @@
+export const green: { [key: string]: string } = {
+	'--primary-light': '#22c55e',
+	'--primary-main': '#16a34a',
+	'--primary-dark': '#15803d',
+	'--primary-contrast-light': '#f9fafb',
+	'--primary-contrast-main': '#f3f4f6',
+	'--primary-contrast-dark': '#e5e7eb',
+	'--secondary-light': '#bbf7d0',
+	'--secondary-main': '#86efac',
+	'--secondary-dark': '#4ade80',
+	'--secondary-contrast-light': '#15803d',
+	'--secondary-contrast-main': '#166534',
+	'--secondary-contrast-dark': '#14532d',
+	'--tertiary-light': '#e5e7eb',
+	'--tertiary-main': '#d1d5db',
+	'--tertiary-dark': '#9ca3af',
+	'--tertiary-contrast-light': '#1f2937',
+	'--tertiary-contrast-main': '#111827',
+	'--tertiary-contrast-dark': '#030712',
+	'--badge-main': '#dc2626',
+	'--badge-contrast': '#f8fafc'
+};
