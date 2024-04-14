@@ -53,6 +53,13 @@
 			<ButtonGroup>
 				<Button square icon="settings" text="Đăng tin" on:click={randomColorMode} />
 				<Button
+					color="gradient"
+					icon="adjust"
+					text="Click Me"
+					badge="1"
+					on:click={randomColorMode}
+				/>
+				<Button
 					color="secondary"
 					icon="adjust"
 					text="Click Me"

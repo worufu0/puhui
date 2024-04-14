@@ -1,5 +1,5 @@
 export const teal: { [key: string]: string } = {
-	'--primary-light': '##2dd4bf',
+	'--primary-light': '#2dd4bf',
 	'--primary-main': '#14b8a6',
 	'--primary-dark': '#0d9488',
 	'--primary-contrast-main': '#ffffff',

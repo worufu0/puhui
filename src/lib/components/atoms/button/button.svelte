@@ -11,7 +11,7 @@
 	export let text: string | undefined = undefined;
 	export let badge: string | undefined = undefined;
 	export let type: 'submit' | 'reset' | 'button' = 'button';
-	export let color: 'primary' | 'secondary' = 'primary';
+	export let color: 'primary' | 'secondary' | 'gradient' = 'primary';
 	export let variant: 'contained' | 'outlined' | 'outlined-dashed' = 'contained';
 	export let size: 'small' | 'medium' | 'big' = 'medium';
 
@@ -67,6 +67,9 @@
 		class:secondary-contained={color === 'secondary' && variant === 'contained'}
 		class:secondary-outlined={color === 'secondary' && variant === 'outlined'}
 		class:secondary-outlined-dashed={color === 'secondary' && variant === 'outlined-dashed'}
+		class:gradient-contained={color === 'gradient' && variant === 'contained'}
+		class:gradient-outlined={color === 'gradient' && variant === 'outlined'}
+		class:gradient-outlined-dashed={color === 'gradient' && variant === 'outlined-dashed'}
 		class:small={!square && size === 'small'}
 		class:square-small={!!square && size === 'small'}
 		class:medium={!square && size === 'medium'}
@@ -172,24 +175,47 @@
 		border-color: var(--secondary-dark);
 		background-color: var(--secondary-dark);
 	}
+	.puhui-button.gradient-contained {
+		color: var(--primary-contrast-main);
+		border-color: transparent;
+		background-image: linear-gradient(
+			to right,
+			var(--primary-dark) 0%,
+			var(--primary-light) 51%,
+			var(--primary-dark) 100%
+		);
+		background-size: 200% auto;
+	}
+	.puhui-button.gradient-contained:hover:enabled {
+		background-position: right;
+	}
+	.puhui-button.gradient-contained:active:enabled {
+		background-position: center;
+	}
 	.puhui-button.primary-outlined,
 	.puhui-button.primary-outlined-dashed,
 	.puhui-button.secondary-outlined,
-	.puhui-button.secondary-outlined-dashed {
+	.puhui-button.secondary-outlined-dashed,
+	.puhui-button.gradient-outlined,
+	.puhui-button.gradient-outlined-dashed {
 		color: var(--primary-main);
 		border-color: var(--primary-main);
 	}
 	.puhui-button.primary-outlined:hover:enabled,
 	.puhui-button.primary-outlined-dashed:hover:enabled,
 	.puhui-button.secondary-outlined:hover:enabled,
-	.puhui-button.secondary-outlined-dashed:hover:enabled {
+	.puhui-button.secondary-outlined-dashed:hover:enabled,
+	.puhui-button.gradient-outlined:hover:enabled,
+	.puhui-button.gradient-outlined-dashed:hover:enabled {
 		color: var(--primary-light);
 		border-color: var(--primary-light);
 	}
 	.puhui-button.primary-outlined:active:enabled,
 	.puhui-button.primary-outlined-dashed:active:enabled,
 	.puhui-button.secondary-outlined:active:enabled,
-	.puhui-button.secondary-outlined-dashed:active:enabled {
+	.puhui-button.secondary-outlined-dashed:active:enabled,
+	.puhui-button.gradient-outlined:active:enabled,
+	.puhui-button.gradient-outlined-dashed:active:enabled {
 		color: var(--primary-dark);
 		border-color: var(--primary-dark);
 	}
