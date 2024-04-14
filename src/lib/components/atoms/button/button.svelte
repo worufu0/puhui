@@ -152,12 +152,10 @@
 		background-color: var(--primary-main);
 	}
 	.puhui-button.primary-contained:hover:enabled {
-		color: var(--primary-contrast-light);
 		border-color: var(--primary-light);
 		background-color: var(--primary-light);
 	}
 	.puhui-button.primary-contained:active:enabled {
-		color: var(--primary-contrast-dark);
 		border-color: var(--primary-dark);
 		background-color: var(--primary-dark);
 	}
@@ -167,12 +165,10 @@
 		background-color: var(--secondary-main);
 	}
 	.puhui-button.secondary-contained:hover:enabled {
-		color: var(--secondary-contrast-light);
 		border-color: var(--secondary-light);
 		background-color: var(--secondary-light);
 	}
 	.puhui-button.secondary-contained:active:enabled {
-		color: var(--secondary-contrast-dark);
 		border-color: var(--secondary-dark);
 		background-color: var(--secondary-dark);
 	}
