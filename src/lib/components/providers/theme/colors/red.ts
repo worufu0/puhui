@@ -11,12 +11,6 @@ export const red: { [key: string]: string } = {
 	'--secondary-contrast-light': '#b91c1c',
 	'--secondary-contrast-main': '#991b1b',
 	'--secondary-contrast-dark': '#7f1d1d',
-	'--tertiary-light': '#e5e7eb',
-	'--tertiary-main': '#d1d5db',
-	'--tertiary-dark': '#9ca3af',
-	'--tertiary-contrast-light': '#1f2937',
-	'--tertiary-contrast-main': '#111827',
-	'--tertiary-contrast-dark': '#030712',
 	'--badge-main': '#020617',
 	'--badge-contrast': '#fafaf9'
 };

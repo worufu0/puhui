@@ -11,12 +11,6 @@ export const pink: { [key: string]: string } = {
 	'--secondary-contrast-light': '#be185d',
 	'--secondary-contrast-main': '#9d174d',
 	'--secondary-contrast-dark': '#831843',
-	'--tertiary-light': '#e5e7eb',
-	'--tertiary-main': '#d1d5db',
-	'--tertiary-dark': '#9ca3af',
-	'--tertiary-contrast-light': '#1f2937',
-	'--tertiary-contrast-main': '#111827',
-	'--tertiary-contrast-dark': '#030712',
 	'--badge-main': '#020617',
 	'--badge-contrast': '#fafaf9'
 };

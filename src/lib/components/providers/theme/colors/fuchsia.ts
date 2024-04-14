@@ -11,12 +11,6 @@ export const fuchsia: { [key: string]: string } = {
 	'--secondary-contrast-light': '#a21caf',
 	'--secondary-contrast-main': '#86198f',
 	'--secondary-contrast-dark': '#701a75',
-	'--tertiary-light': '#e5e7eb',
-	'--tertiary-main': '#d1d5db',
-	'--tertiary-dark': '#9ca3af',
-	'--tertiary-contrast-light': '#1f2937',
-	'--tertiary-contrast-main': '#111827',
-	'--tertiary-contrast-dark': '#030712',
 	'--badge-main': '#020617',
 	'--badge-contrast': '#fafaf9'
 };

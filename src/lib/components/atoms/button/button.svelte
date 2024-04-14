@@ -11,7 +11,7 @@
 	export let text: string | undefined = undefined;
 	export let badge: string | undefined = undefined;
 	export let type: 'submit' | 'reset' | 'button' = 'button';
-	export let color: 'primary' | 'secondary' | 'tertiary' = 'primary';
+	export let color: 'primary' | 'secondary' = 'primary';
 	export let variant: 'contained' | 'outlined' | 'outlined-dashed' = 'contained';
 	export let size: 'small' | 'medium' | 'big' = 'medium';
 
@@ -67,9 +67,6 @@
 		class:secondary-contained={color === 'secondary' && variant === 'contained'}
 		class:secondary-outlined={color === 'secondary' && variant === 'outlined'}
 		class:secondary-outlined-dashed={color === 'secondary' && variant === 'outlined-dashed'}
-		class:tertiary-contained={color === 'tertiary' && variant === 'contained'}
-		class:tertiary-outlined={color === 'tertiary' && variant === 'outlined'}
-		class:tertiary-outlined-dashed={color === 'tertiary' && variant === 'outlined-dashed'}
 		class:small={!square && size === 'small'}
 		class:square-small={!!square && size === 'small'}
 		class:medium={!square && size === 'medium'}
@@ -179,21 +176,6 @@
 		border-color: var(--secondary-dark);
 		background-color: var(--secondary-dark);
 	}
-	.puhui-button.tertiary-contained {
-		color: var(--tertiary-contrast-main);
-		border-color: var(--tertiary-main);
-		background-color: var(--tertiary-main);
-	}
-	.puhui-button.tertiary-contained:hover:enabled {
-		color: var(--tertiary-contrast-light);
-		border-color: var(--tertiary-light);
-		background-color: var(--tertiary-light);
-	}
-	.puhui-button.tertiary-contained:active:enabled {
-		color: var(--tertiary-contrast-dark);
-		border-color: var(--tertiary-dark);
-		background-color: var(--tertiary-dark);
-	}
 	.puhui-button.primary-outlined,
 	.puhui-button.primary-outlined-dashed,
 	.puhui-button.secondary-outlined,
@@ -214,26 +196,6 @@
 	.puhui-button.secondary-outlined-dashed:active:enabled {
 		color: var(--primary-dark);
 		border-color: var(--primary-dark);
-	}
-	.puhui-button.tertiary-outlined,
-	.puhui-button.tertiary-outlined-dashed {
-		color: var(--tertiary-contrast-main);
-		border-color: var(--tertiary-contrast-main);
-	}
-	.puhui-button.tertiary-outlined:hover:enabled,
-	.puhui-button.tertiary-outlined-dashed:hover:enabled {
-		color: var(--tertiary-contrast-light);
-		border-color: var(--tertiary-contrast-light);
-	}
-	.puhui-button.tertiary-outlined:active:enabled,
-	.puhui-button.tertiary-outlined-dashed:active:enabled {
-		color: var(--tertiary-contrast-dark);
-		border-color: var(--tertiary-contrast-dark);
-	}
-	.puhui-button.tertiary-outlined:active:enabled,
-	.puhui-button.tertiary-outlined-dashed:active:enabled {
-		color: var(--tertiary-contrast-dark);
-		border-color: var(--tertiary-contrast-dark);
 	}
 	.puhui-button.small {
 		padding-left: 14px;

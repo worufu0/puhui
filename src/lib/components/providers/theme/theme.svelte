@@ -22,7 +22,7 @@
 		pink,
 		rose
 	} from './colors';
-	import { light } from './brightness';
+	import { light, dark } from './brightness';
 
 	const allTheme: {
 		base: { [key: string]: string };
@@ -32,7 +32,7 @@
 		base,
 		brightness: {
 			light,
-			dark: {}
+			dark
 		},
 		color: {
 			red,

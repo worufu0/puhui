@@ -11,12 +11,6 @@ export const amber: { [key: string]: string } = {
 	'--secondary-contrast-light': '#b45309',
 	'--secondary-contrast-main': '#92400e',
 	'--secondary-contrast-dark': '#78350f',
-	'--tertiary-light': '#e5e7eb',
-	'--tertiary-main': '#d1d5db',
-	'--tertiary-dark': '#9ca3af',
-	'--tertiary-contrast-light': '#1f2937',
-	'--tertiary-contrast-main': '#111827',
-	'--tertiary-contrast-dark': '#030712',
 	'--badge-main': '#020617',
 	'--badge-contrast': '#fafaf9'
 };

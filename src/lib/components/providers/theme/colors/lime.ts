@@ -11,12 +11,6 @@ export const lime: { [key: string]: string } = {
 	'--secondary-contrast-light': '#4d7c0f',
 	'--secondary-contrast-main': '#3f6212',
 	'--secondary-contrast-dark': '#365314',
-	'--tertiary-light': '#e5e7eb',
-	'--tertiary-main': '#d1d5db',
-	'--tertiary-dark': '#9ca3af',
-	'--tertiary-contrast-light': '#1f2937',
-	'--tertiary-contrast-main': '#111827',
-	'--tertiary-contrast-dark': '#030712',
 	'--badge-main': '#dc2626',
 	'--badge-contrast': '#f8fafc'
 };

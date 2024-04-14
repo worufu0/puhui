@@ -124,7 +124,7 @@
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 200ms;
 		padding-right: 10px;
-		border-color: var(--stroke-light);
+		border-color: var(--stroke);
 		color: var(--text-primary);
 	}
 	.puhui-text-input-input:disabled {
@@ -132,7 +132,7 @@
 		cursor: not-allowed;
 	}
 	.puhui-text-input-input:placeholder-shown {
-		border-top-color: var(--stroke-light);
+		border-top-color: var(--stroke);
 	}
 	.puhui-text-input-input:focus {
 		border-color: var(--primary-main);
@@ -147,11 +147,11 @@
 		appearance: none;
 	}
 	.puhui-text-input-input::placeholder {
-		color: var(--text-tertiary);
+		color: var(--placeholder);
 		opacity: 0%;
 	}
 	.puhui-text-input-input::selection {
-		background-color: var(--tertiary-main);
+		background-color: var(--selection);
 	}
 	.puhui-text-input-input.icon {
 		padding-right: 36px;
@@ -160,7 +160,7 @@
 		border-top-color: transparent;
 	}
 	.puhui-text-input-input.label:placeholder-shown {
-		border-top-color: var(--stroke-light);
+		border-top-color: var(--stroke);
 	}
 	.puhui-text-input-input.label:focus {
 		border-top-color: transparent;
@@ -200,7 +200,7 @@
 		transition-property: all;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 200ms;
-		color: var(--text-tertiary);
+		color: var(--text-secondary);
 	}
 	.puhui-text-input-label::before,
 	.puhui-text-input-label::after {
@@ -212,7 +212,7 @@
 		transition-property: all;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 200ms;
-		border-color: var(--stroke-light);
+		border-color: var(--stroke);
 	}
 	.puhui-text-input-label::before {
 		width: 10px;
@@ -240,7 +240,7 @@
 	}
 	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label::before,
 	.puhui-text-input-input:disabled:placeholder-shown ~ .puhui-text-input-label::after {
-		border-color: var(--stroke-light);
+		border-color: var(--stroke);
 	}
 	.puhui-text-input-input.small:focus ~ .puhui-text-input-label,
 	.puhui-text-input-input.medium:focus ~ .puhui-text-input-label,
@@ -276,7 +276,7 @@
 		right: 10px;
 		top: 50%;
 		transform: translateY(-50%);
-		color: var(--stroke-dark);
+		color: var(--secondary);
 		font-size: 16px;
 	}
 	.puhui-text-input-input:disabled ~ .puhui-text-input-icon {
@@ -288,7 +288,7 @@
 		line-height: 14px;
 		margin-left: 10px;
 		margin-right: 10px;
-		color: var(--text-tertiary);
+		color: var(--text-secondary);
 	}
 	.puhui-text-input-helper.error {
 		color: var(--error-main);
