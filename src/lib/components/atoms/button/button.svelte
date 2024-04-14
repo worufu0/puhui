@@ -189,9 +189,6 @@
 	.puhui-button.gradient-contained:hover:enabled {
 		background-position: right;
 	}
-	.puhui-button.gradient-contained:active:enabled {
-		background-position: center;
-	}
 	.puhui-button.primary-outlined,
 	.puhui-button.primary-outlined-dashed,
 	.puhui-button.secondary-outlined,
