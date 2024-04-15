@@ -15,12 +15,9 @@
 	export let variant: 'contained' | 'outlined' | 'outlined-dashed' = 'contained';
 	export let size: 'small' | 'medium' | 'big' = 'medium';
 
-	let shouldFluid: boolean;
-	let shouldRenderIcon: boolean;
-	let shouldRenderText: boolean;
-	let shouldRenderBadge: boolean;
-	let shouldRenderComponent: boolean;
-
+	function computeTitle() {
+		return square ? 'puhui-button' : text || 'puhui-button';
+	}
 	function computeTabIndex() {
 		if (disabled) return -1;
 		if (tabindex !== null && tabindex !== undefined) return tabindex;
@@ -49,10 +46,10 @@
 
 {#if shouldRenderComponent}
 	<button
-		title="puhui-button"
 		{disabled}
 		{id}
 		{type}
+		title={computeTitle()}
 		tabindex={computeTabIndex()}
 		class="puhui-button"
 		class:fluid={shouldFluid}
@@ -140,9 +137,7 @@
 	.puhui-button.rounded {
 		border-radius: 9999px;
 	}
-	.puhui-button.outlined {
-		background-color: transparent;
-	}
+	.puhui-button.outlined,
 	.puhui-button.outlined-dashed {
 		background-color: transparent;
 	}
@@ -179,12 +174,12 @@
 		color: var(--primary-contrast-main);
 		border-color: transparent;
 		background-image: linear-gradient(
-			to right,
+			120deg,
 			var(--primary-dark) 0%,
-			var(--primary-light) 51%,
+			var(--primary-light) 50%,
 			var(--primary-dark) 100%
 		);
-		background-size: 200% auto;
+		background-size: 200%;
 	}
 	.puhui-button.gradient-contained:hover:enabled {
 		background-position: right;

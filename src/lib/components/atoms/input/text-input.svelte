@@ -17,10 +17,9 @@
 	export let type: 'text' | 'email' | 'search' | 'url' | 'password' = 'text';
 	export let size: 'small' | 'medium' | 'big' = 'medium';
 
-	let shouldRenderIcon: boolean;
-	let shouldRenderLabel: boolean;
-	let shouldRenderHelper: boolean;
-
+	function computeTitle() {
+		return value || 'puhui-text-input';
+	}
 	function computeTabIndex() {
 		if (disabled) return -1;
 		if (tabindex !== null && tabindex !== undefined) return tabindex;
@@ -42,7 +41,6 @@
 <div class="puhui-text-input-wrapper">
 	<div class="puhui-text-input-fieldset">
 		<input
-			title="puhui-text-input-input"
 			{disabled}
 			{readonly}
 			{required}
@@ -54,6 +52,7 @@
 			{placeholder}
 			{value}
 			{type}
+			title={computeTitle()}
 			tabindex={computeTabIndex()}
 			class="puhui-text-input-input"
 			class:small={size === 'small'}

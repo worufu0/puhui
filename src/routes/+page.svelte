@@ -51,16 +51,17 @@
 				value="jal10k102y12k1k129u2s82"
 			/>
 			<ButtonGroup>
+				<Button />
 				<Button square icon="settings" text="Đăng tin" on:click={randomColorMode} />
 				<Button
-					color="gradient"
+					color="secondary"
 					icon="adjust"
 					text="Click Me"
 					badge="1"
 					on:click={randomColorMode}
 				/>
 				<Button
-					color="secondary"
+					color="gradient"
 					icon="adjust"
 					text="Click Me"
 					badge="1"
@@ -70,11 +71,18 @@
 			<ButtonGroup>
 				<Button variant="outlined" text="Click Me" on:click={randomColorMode} />
 				<Button color="secondary" variant="outlined" text="Click Me" on:click={randomColorMode} />
+				<Button color="gradient" variant="outlined" text="Click Me" on:click={randomColorMode} />
 			</ButtonGroup>
 			<ButtonGroup>
 				<Button variant="outlined-dashed" text="Click Me" on:click={randomColorMode} />
 				<Button
 					color="secondary"
+					variant="outlined-dashed"
+					text="Click Me"
+					on:click={randomColorMode}
+				/>
+				<Button
+					color="gradient"
 					variant="outlined-dashed"
 					text="Click Me"
 					on:click={randomColorMode}
